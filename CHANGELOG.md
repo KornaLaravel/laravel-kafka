@@ -2,6 +2,11 @@
 
 All relevant changes to `mateusjunges/laravel-kafka` will be documented here.
 
+##[2026-08-25 v2.11.5](https://github.com/mateusjunges/laravel-kafka/compare/v2.11.4...v2.11.5)
+* Restore the host process signal handlers and async signal setting after consuming, fixing graceful shutdown of queue workers that run consumers inside jobs by [@mspasov](https://github.com/mspasov) in [#392](https://github.com/mateusjunges/laravel-kafka/pull/392)
+* Create the dead letter queue producer only when a DLQ is configured, avoiding unnecessary broker connections and threads for every consumer by [@mspasov](https://github.com/mspasov) in [#391](https://github.com/mateusjunges/laravel-kafka/pull/391)
+* Allow stable `laravel/pint` releases in `require-dev`, fixing dependency resolution on the PHP 8.2 CI jobs by [@mspasov](https://github.com/mspasov) in [#393](https://github.com/mateusjunges/laravel-kafka/pull/393)
+
 ##[2026-06-12 v2.11.4](https://github.com/mateusjunges/laravel-kafka/compare/v2.11.3...v2.11.4)
 * Stop consuming only after all assigned partitions reach EOF when using `stopAfterLastMessage()` by [@mateusjunges](https://github.com/mateusjunges) in [#387](https://github.com/mateusjunges/laravel-kafka/pull/387)
 
